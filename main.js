@@ -1,4 +1,4 @@
-const tokenTypes = ['nf', 'ns', 'ps', 'po', 'pa', 'pp', 'pr']
+const tokenTypes = ['nf', 'ns', 'ps', 'po', 'pa', 'pp', 'pr', 'tc', 'tf', 'tn']
 const profileDefaults = {
   nf: 'Creyon',
   ns: 'GT',
@@ -6,7 +6,10 @@ const profileDefaults = {
   po: 'Them',
   pa: 'Their',
   pp: 'Theirs',
-  pr: 'Themself'
+  pr: 'Themself',
+  tc: 'Person',
+  tf: 'Buddy',
+  tn: 'Person'
 }
 
 function getOutput(){ // eslint-disable-line
@@ -81,10 +84,6 @@ function replaceTokens (input) {
         complexArgs = parts[1].split(',')
       }
       switch (parts[0]) {
-        case 't':
-          // TODO: term types
-          input = input.replace(token, 'test')
-          break
         case 'p':
           if (document.getElementById('option-plural').checked) {
             input = input.replace(token, complexArgs[1])
@@ -125,9 +124,9 @@ const templates = [
   '%nf;c% told me to meet at %pa% house.',
   'Have you seen %nf;c%? %ps;c% said %ps% would be here.',
   '%nf;c%? Yeah, I think I saw %po% out back.',
-  'I know this really cool $t;c$ called %nf;c%!!',
+  'I know this really cool %tc% called %nf;c%!!',
   '%ps;c%\'$p;s,re$ super awesome and I\'m really happy to be around %po%.',
-  '%pp;c%\'$p;s,re$ personality is super unique, and I really love that!!',
+  '%pa;c% personality is super unique, and I really love that!!',
   '%ps;c% deserve$p;s,$ so much love, and I hope %ps% continue$p;s,$ to practice self care and love %pr% <3',
   'Hey, look! It\'s %nf;c%!',
   'I wonder what %ps%$p;\'s,\'re$ up to, and I hope %pa% day\'s going okay.'
