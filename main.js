@@ -1,7 +1,10 @@
 // this is just here to circumvent an issue with StandardJS while keeping the code clean
 const templates = exportTemplates // eslint-disable-line
 
+// types of simple swap token
 const tokenTypes = ['nf', 'ns', 'ps', 'po', 'pa', 'pp', 'pr', 'tc', 'tf', 'tn']
+
+// default values for swap tokens that are used when nothing is entered in the input fields - this prevents strange outputs that might confuse the user
 const profileDefaults = {
   nf: 'Creyon',
   ns: 'GT',
@@ -10,15 +13,17 @@ const profileDefaults = {
   pa: 'Their',
   pp: 'Theirs',
   pr: 'Themself',
-  tc: 'Person',
+  tc: 'Person', // TODO: better default terms
   tf: 'Buddy',
   tn: 'Person'
 }
 
-function getOutput(){ // eslint-disable-line
+function getOutput() { // eslint-disable-line
   document.getElementById('output').innerText = generateFromTemplates(5)
 }
 
+// generate an output from *num* templates
+// TODO: make num customisable, while avoiding it being bigger than the number of templates (maybe just an alert for now?)
 function generateFromTemplates (num) {
   const IDs = getTemplateIDs(num)
   let output = ''
@@ -28,6 +33,8 @@ function generateFromTemplates (num) {
   return output
 }
 
+// get a random set of template IDs, ensuring there are no duplicates
+// TODO: select based on template themes, attributes, and tokens used, e.g. positive, negative, includes primary name, includes reflexive
 function getTemplateIDs (num) {
   const IDs = []
   let random
@@ -41,6 +48,7 @@ function getTemplateIDs (num) {
   return IDs
 }
 
+// replace all tokens with relevant text
 function replaceTokens (input) {
   // simple swap tokens
   const profile = grabProfile()
@@ -53,6 +61,7 @@ function replaceTokens (input) {
       const mainStr = parts[0]
       replacement = profile[mainStr]
       if (replacement === '') {
+        // use default value
         replacement = profileDefaults[mainStr]
       }
       replacement = replacement.toLowerCase()
@@ -60,9 +69,11 @@ function replaceTokens (input) {
         const params = parts[1].split(',')
         params.forEach(param => {
           switch (param) {
+            // full caps param
             case 'f':
               replacement = replacement.toUpperCase()
               break
+            // capitalise first letter, e.g. for sentence start or names
             case 'c':
               replacement = replacement.charAt(0).toUpperCase() + replacement.slice(1)
               break
@@ -71,6 +82,7 @@ function replaceTokens (input) {
           }
         })
       }
+      // replace the full token with the new string
       input = input.replace(token, replacement)
     })
   }
@@ -86,6 +98,7 @@ function replaceTokens (input) {
         complexArgs = parts[1].split(',')
       }
       switch (parts[0]) {
+        // plural tags - words that sound weird after plural-like pronouns such as they/them can be specified here, e.g. "they were" not "they was"
         case 'p':
           if (document.getElementById('option-plural').checked) {
             input = input.replace(token, complexArgs[1])
@@ -102,6 +115,7 @@ function replaceTokens (input) {
   return input
 }
 
+// get swap token profile data from the input fields, return it as an object
 function grabProfile () {
   const profile = {}
   tokenTypes.forEach(token => {
