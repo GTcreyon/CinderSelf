@@ -1,0 +1,68 @@
+<!--
+hey! if you're reading this, and you're interested in what you're seeing, you might want to check out the repository at https://github.com/GTcreyon/CinderSelf ^^
+my experience with HTML/CSS/JS is pretty lacking, so a lot of what you'll see here is kinda messy, but i'm trying my best to clean up after myself as i go
+if you have any advice or contributions to make, feel free to either contact me directly, submit an issue on the repo, or even create a fork and pull request to fix it yourself!
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CinderSelf</title>
+        <script src="main.js" defer></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <a href="./index.html">Main</a>
+            <a href="./about.html">About</a>
+        </header>
+        <h1>CinderSelf</h1>
+        <h2>A tool that tests possible names and pronouns to fit your identity.</h2>
+        <fieldset>
+            <legend>Info</legend>
+            
+            <label>Primary name</label>
+            <input id="profile-fn" type="text">
+
+            <label>Secondary name</label>
+            <input id="profile-sn" type="text">
+        </fieldset>
+
+        <fieldset>
+            <legend>Pronouns</legend>
+            
+            <label>Subject</label>
+            <input id="profile-ps" type="text" placeholder="They">
+
+            <label>Object</label>
+            <input id="profile-po" type="text" placeholder="Them">
+
+            <label>Possessive [Adjective]</label>
+            <input id="profile-pa" type="text" placeholder="Their">
+
+            <label>Possessive [Pronoun]</label>
+            <input id="profile-pp" type="text" placeholder="Theirs">
+
+            <label>Reflexive</label>
+            <input id="profile-pr" type="text" placeholder="Themself">
+        </fieldset>
+
+        <fieldset>
+            <legend>Options</legend>
+            
+            <label>Treat as plural</label>
+            <input id="option-plural" type="checkbox">
+        </fieldset>
+
+        <button onclick="generateOutput()">Generate</button>
+
+        <output id="output"></output>
+
+        <footer>
+            <p>
+                Source: <a href="https://github.com/GTcreyon/CinderSelf">CinderSelf GitHub repository</a>
+                <br>
+                License: GPL-3.0
+            </p>
+        </footer>
+    </body>
+</html>
