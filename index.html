@@ -16,107 +16,109 @@ if you have any advice or contributions to make, feel free to either contact me 
             <a href="./index.html">Main</a>
             <a href="./about.html">About</a>
         </header>
-        <h1>CinderSelf</h1>
-        <h2>A tool that tests possible names and pronouns to fit your identity.</h2>
-        <div class="control-panel">
-            <div class="panel-word">
-                <fieldset>
-                    <legend>Info</legend>
-                    
-                    <label>Primary name</label>
-                    <input id="profile-nf" type="text">
-
-                    <label>Secondary name</label>
-                    <input id="profile-ns" type="text">
-                </fieldset>
-
-                <fieldset>
-                    <legend>Pronouns</legend>
-                    
-                    <label>Subject</label>
-                    <input id="profile-ps" type="text" placeholder="They">
-
-                    <label>Object</label>
-                    <input id="profile-po" type="text" placeholder="Them">
-
-                    <label>Possessive [Adjective]</label>
-                    <input id="profile-pa" type="text" placeholder="Their">
-
-                    <label>Possessive [Pronoun]</label>
-                    <input id="profile-pp" type="text" placeholder="Theirs">
-
-                    <label>Reflexive</label>
-                    <input id="profile-pr" type="text" placeholder="Themself">
-                </fieldset>
-
-                <fieldset>
-                    <legend>Terms</legend>
-                    
-                    <label>Casual</label>
-                    <input id="profile-tc" type="text" placeholder="Person">
-                    
-                    <label>Friendly</label>
-                    <input id="profile-tf" type="text" placeholder="Buddy">
-                    
-                    <label>Neutral</label>
-                    <input id="profile-tn" type="text" placeholder="Person">
-                </fieldset>
-            </div>
-
-            <div class="panel-option">
-                <fieldset>
-                    <legend>Options</legend>
-                    
-                    <label>Treat as plural</label>
-                    <input id="option-plural" type="checkbox" checked="true">
-                    
-                    <label>How many to generate?</label>
-                    <input id="option-count" type="number" value="5">
-                </fieldset>
-
-                <fieldset>
-                    <legend>Filters</legend>
-                    
+        <div class="main">
+            <h1>CinderSelf</h1>
+            <h2>A tool that tests possible names and pronouns to fit your identity.</h2>
+            <div class="control-panel">
+                <div class="panel-word">
                     <fieldset>
-                        <legend>Must include</legend>
+                        <legend>Info</legend>
                         
                         <label>Primary name</label>
-                        <input id="filter-nf" type="checkbox">
-                        
+                        <input id="profile-nf" type="text" required>
+
                         <label>Secondary name</label>
-                        <input id="filter-ns" type="checkbox">
-                        
-                        <label>Subject pronoun</label>
-                        <input id="filter-ps" type="checkbox">
-                        
-                        <label>Object pronoun</label>
-                        <input id="filter-po" type="checkbox">
-                        
-                        <label>Possessive adjective</label>
-                        <input id="filter-pa" type="checkbox">
-                        
-                        <label>Possessive pronoun</label>
-                        <input id="filter-pp" type="checkbox">
-                        
-                        <label>Reflexive pronoun</label>
-                        <input id="filter-pr" type="checkbox">
-                        
-                        <label>Casual term</label>
-                        <input id="filter-tc" type="checkbox">
-                        
-                        <label>Friendly term</label>
-                        <input id="filter-tf" type="checkbox">
-                        
-                        <label>Neutral term</label>
-                        <input id="filter-tn" type="checkbox">
+                        <input id="profile-ns" type="text" required>
                     </fieldset>
-                </fieldset>
+
+                    <fieldset>
+                        <legend>Pronouns</legend>
+                        
+                        <label>Subject</label>
+                        <input id="profile-ps" type="text" placeholder="They" required>
+
+                        <label>Object</label>
+                        <input id="profile-po" type="text" placeholder="Them" required>
+
+                        <label>Possessive [Adjective]</label>
+                        <input id="profile-pa" type="text" placeholder="Their" required>
+
+                        <label>Possessive [Pronoun]</label>
+                        <input id="profile-pp" type="text" placeholder="Theirs" required>
+
+                        <label>Reflexive</label>
+                        <input id="profile-pr" type="text" placeholder="Themself" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Terms</legend>
+                        
+                        <label>Casual</label>
+                        <input id="profile-tc" type="text" placeholder="Person" required>
+                        
+                        <label>Friendly</label>
+                        <input id="profile-tf" type="text" placeholder="Buddy" required>
+                        
+                        <label>Neutral</label>
+                        <input id="profile-tn" type="text" placeholder="Person" required>
+                    </fieldset>
+                </div>
+
+                <div class="panel-option">
+                    <fieldset>
+                        <legend>Options</legend>
+                        
+                        <label>Treat as plural</label>
+                        <input id="option-plural" type="checkbox" checked="true">
+                        
+                        <label>How many to generate?</label>
+                        <input id="option-count" type="number" value="5" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Filters</legend>
+                        
+                        <fieldset>
+                            <legend>Must include</legend>
+                            
+                            <label>Primary name</label>
+                            <input id="filter-nf" type="checkbox">
+                            
+                            <label>Secondary name</label>
+                            <input id="filter-ns" type="checkbox">
+                            
+                            <label>Subject pronoun</label>
+                            <input id="filter-ps" type="checkbox">
+                            
+                            <label>Object pronoun</label>
+                            <input id="filter-po" type="checkbox">
+                            
+                            <label>Possessive adjective</label>
+                            <input id="filter-pa" type="checkbox">
+                            
+                            <label>Possessive pronoun</label>
+                            <input id="filter-pp" type="checkbox">
+                            
+                            <label>Reflexive pronoun</label>
+                            <input id="filter-pr" type="checkbox">
+                            
+                            <label>Casual term</label>
+                            <input id="filter-tc" type="checkbox">
+                            
+                            <label>Friendly term</label>
+                            <input id="filter-tf" type="checkbox">
+                            
+                            <label>Neutral term</label>
+                            <input id="filter-tn" type="checkbox">
+                        </fieldset>
+                    </fieldset>
+                </div>
             </div>
+            <button onclick="getOutput()">Generate</button>
+            <br> <!--yeah gross i know i'll fix it later-->
+            <br>
+            <output id="output"></output>
         </div>
-        <button onclick="getOutput()">Generate</button>
-
-        <output id="output"></output>
-
         <footer>
             <p>
                 Source: <a href="https://github.com/GTcreyon/CinderSelf">CinderSelf GitHub repository</a>

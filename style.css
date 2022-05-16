@@ -1,7 +1,23 @@
+:root {
+    --bg-color: #161616;
+    --input-color: #1b1b1b;
+    --panel-color: #202020;
+    --panel-sub-color: #262626;
+    --accent-color: #ff8000;
+    --input-unset-color: #f5abb9;
+    --input-set-color: #5bcffb;
+    --text-color: #dcddde;
+}
+
 body {
+    margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #121212;
-    color: white;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.main {
+    margin: 10px;
 }
 
 a {
@@ -15,6 +31,13 @@ a:visited {
 fieldset {
     display: flex;
     flex-direction: column;
+    background-color: var(--panel-color);
+    border: none;
+    border-left: 2px solid var(--accent-color);
+}
+
+fieldset > fieldset {
+    background-color: var(--panel-sub-color);
 }
 
 .control-panel {
@@ -25,4 +48,42 @@ fieldset {
 
 .control-panel > * {
     flex-grow: 1;
+}
+
+header {
+    background-color: var(--panel-color);
+    padding: 10px;
+    border-top: 2px solid var(--accent-color);
+}
+
+input {
+    background-color: var(--input-color);
+    border: 1px solid var(--panel-sub-color);
+    border-left: 2px solid var(--input-unset-color);
+    color: unset;
+}
+
+input:valid {
+    border-left: 2px solid var(--input-set-color);
+}
+
+button {
+    background-color: var(--panel-color);
+    color: var(--text-color);
+    padding: 5px;
+    border: none;
+    border-right: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+button:hover {
+    border: none;
+    border-right: 2px solid var(--input-unset-color);
+    border-bottom: 2px solid var(--input-unset-color);
+}
+
+button:active {
+    border: none;
+    border-left: 2px solid var(--input-set-color);
+    border-top: 2px solid var(--input-set-color);
 }
