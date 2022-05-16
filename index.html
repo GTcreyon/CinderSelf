@@ -65,6 +65,47 @@ if you have any advice or contributions to make, feel free to either contact me 
             
             <label>Treat as plural</label>
             <input id="option-plural" type="checkbox" checked="true">
+            
+            <label>How many to generate?</label>
+            <input id="option-count" type="number" value="5">
+        </fieldset>
+
+        <fieldset>
+            <legend>Filters</legend>
+            
+            <fieldset>
+                <legend>Must include</legend>
+                
+                <label>Primary name</label>
+                <input id="filter-nf" type="checkbox">
+                
+                <label>Secondary name</label>
+                <input id="filter-ns" type="checkbox">
+                
+                <label>Subject pronoun</label>
+                <input id="filter-ps" type="checkbox">
+                
+                <label>Object pronoun</label>
+                <input id="filter-po" type="checkbox">
+                
+                <label>Possessive adjective</label>
+                <input id="filter-pa" type="checkbox">
+                
+                <label>Possessive pronoun</label>
+                <input id="filter-pp" type="checkbox">
+                
+                <label>Reflexive pronoun</label>
+                <input id="filter-pr" type="checkbox">
+                
+                <label>Casual term</label>
+                <input id="filter-tc" type="checkbox">
+                
+                <label>Friendly term</label>
+                <input id="filter-tf" type="checkbox">
+                
+                <label>Neutral term</label>
+                <input id="filter-tn" type="checkbox">
+            </fieldset>
         </fieldset>
 
         <button onclick="getOutput()">Generate</button>

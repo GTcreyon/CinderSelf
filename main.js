@@ -16,29 +16,65 @@ const profileDefaults = {
 }
 
 function getOutput(){ // eslint-disable-line
-  document.getElementById('output').innerText = generateFromTemplates(5)
+  document.getElementById('output').innerText = generateFromTemplates(document.getElementById('option-count').value)
 }
 
 function generateFromTemplates (num) {
-  const IDs = getTemplateIDs(num)
+  const chosenTemplates = getTemplates(num)
   let output = ''
-  for (let i = 0; i < num; i++) {
-    output += replaceTokens(templates[IDs[i]]) + '\n'
-  }
+  chosenTemplates.forEach(template => {
+    output += replaceTokens(template) + '\n'
+  })
   return output
 }
 
-function getTemplateIDs (num) {
-  const IDs = []
-  let random
+function getTemplates (num) {
+  const usableTemplates = [...templates] // duplicate the array to prevent overwrite issues
+  const filters = grabFilters()
+  const outputTemplates = []
+  let randomTemplate
   for (let i = 0; i < num; i++) {
+    let isUsable = false
+    let abort = false
+    let templateID
     do {
-      random = Math.floor(Math.random() * templates.length)
+      templateID = Math.floor(Math.random() * usableTemplates.length)
+      randomTemplate = usableTemplates[templateID]
+      if (meetsFilters(filters, randomTemplate)) {
+        isUsable = true
+        outputTemplates.push(randomTemplate)
+      }
+      usableTemplates.splice(templateID, 1)
+      if (usableTemplates.length <= 0) {
+        window.alert('Not enough valid templates!')
+        console.error('Not enough valid templates!')
+        i = num
+        abort = true
+      }
     }
-    while (IDs.includes(random))
-    IDs.push(random)
+    while (!isUsable && !abort)
   }
-  return IDs
+  return outputTemplates
+}
+
+function meetsFilters (filters, str) {
+  let output = true
+  filters.forEach(filter => {
+    if (!str.includes('%' + filter)) {
+      output = false
+    }
+  })
+  return output
+}
+
+function grabFilters () {
+  const filters = []
+  tokenTypes.forEach(token => {
+    if (document.getElementById('filter-' + token).checked) {
+      filters.push(token)
+    }
+  })
+  return filters
 }
 
 function replaceTokens (input) {
