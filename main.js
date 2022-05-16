@@ -63,6 +63,7 @@ function getTemplates (num) {
   return outputTemplates
 }
 
+// checks if a string meets filter requirements
 function meetsFilters (filters, str) {
   let output = true
   filters.forEach(filter => {
@@ -73,6 +74,7 @@ function meetsFilters (filters, str) {
   return output
 }
 
+// grab an array of the filters
 function grabFilters () {
   const filters = []
   tokenTypes.forEach(token => {
