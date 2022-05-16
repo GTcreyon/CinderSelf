@@ -3,3 +3,11 @@ body {
     background-color: #121212;
     color: white;
 }
+
+a {
+    color: #5bcffb;
+}
+
+a:visited {
+    color: #f5abb9;
+}
