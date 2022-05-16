@@ -6,8 +6,8 @@ const tokenTypes = ['nf', 'ns', 'ps', 'po', 'pa', 'pp', 'pr', 'tc', 'tf', 'tn']
 
 // default values for swap tokens that are used when nothing is entered in the input fields - this prevents strange outputs that might confuse the user
 const profileDefaults = {
-  nf: 'Creyon',
-  ns: 'GT',
+  nf: 'Cinder',
+  ns: 'Smith',
   ps: 'They',
   po: 'Them',
   pa: 'Their',
