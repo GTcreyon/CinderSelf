@@ -11,3 +11,18 @@ a {
 a:visited {
     color: #f5abb9;
 }
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+.control-panel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.control-panel > * {
+    flex-grow: 1;
+}
