@@ -7,6 +7,7 @@
     --input-unset-color: #f5abb9;
     --input-set-color: #5bcffb;
     --text-color: #dcddde;
+    --text-light-color: #eee;
 }
 
 body {
@@ -54,6 +55,22 @@ header {
     background-color: var(--panel-color);
     padding: 10px;
     border-top: 2px solid var(--accent-color);
+    display: flex;
+    align-items: center;
+}
+
+header > a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 5px;
+}
+
+header > a:visited {
+    color: var(--text-color)
+}
+
+header > a:hover {
+    color: var(--text-light-color)
 }
 
 input {
@@ -72,18 +89,30 @@ button {
     color: var(--text-color);
     padding: 5px;
     border: none;
-    border-right: 2px solid var(--accent-color);
-    border-bottom: 2px solid var(--accent-color);
+    border-left: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--panel-sub-color);
 }
 
 button:hover {
-    border: none;
-    border-right: 2px solid var(--input-unset-color);
     border-bottom: 2px solid var(--input-unset-color);
 }
 
 button:active {
-    border: none;
-    border-left: 2px solid var(--input-set-color);
+    border-bottom: none;
     border-top: 2px solid var(--input-set-color);
+}
+
+.logo {
+    font-weight: bold;
+    font-size: xx-large;
+    padding: 0px;
+    padding-right: 20px;
+}
+
+output {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: var(--panel-color);
+    border-left: 2px solid var(--accent-color);
 }
