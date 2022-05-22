@@ -10,6 +10,10 @@
     --text-light-color: #eee;
 }
 
+b {
+    color: var(--text-light-color);
+}
+
 body {
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
@@ -91,6 +95,7 @@ button {
     border: none;
     border-left: 2px solid var(--accent-color);
     border-bottom: 2px solid var(--panel-sub-color);
+    border-top: 2px solid var(--panel-color);
 }
 
 button:hover {

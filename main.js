@@ -18,7 +18,7 @@ const profileDefaults = {
   tn: 'Person'
 }
 
-function getOutput(){ // eslint-disable-line
+function getOutput () { // eslint-disable-line
   document.getElementById('output').innerText = generateFromTemplates(document.getElementById('option-count').value)
 }
 

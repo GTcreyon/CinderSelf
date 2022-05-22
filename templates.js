@@ -20,7 +20,7 @@ const exportTemplates = [ // eslint-disable-line
   'I know this really cool %tc% called %nf;c%!!',
   '%ps;c%\'$p;s,re$ super awesome and I\'m really happy to be around %po%.',
   '%pa;c% personality is super unique, and I really love that!!',
-  '%ps;c% deserve$p;s,$ so much love, and I hope %ps% continue$p;s,$ to practice self care and love %pr% <3',
+  '%ps;c% deserve$p;s,$ so much love, and I hope %ps% continue$p;s,$ to practice self care and love %pr%.',
   'Hey, look! It\'s %nf;c%!',
   'I wonder what %ps%$p;\'s,\'re$ up to, and I hope %pa% day\'s going okay.',
   'Do you happen to know a %tn% by the name of "%nf;c% %ns;c%"?',
