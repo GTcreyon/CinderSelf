@@ -9,7 +9,7 @@ if you have any advice or contributions to make, feel free to either contact me 
         <title>CinderSelf</title>
         <script src="templates.js" defer></script>
         <script src="main.js" defer></script>
-        <script src="focal-anchor.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/gh/GTcreyon/FocalAnchors/focal-anchors.min.js" defer></script>
         <link rel="stylesheet" href="style.css">
         <link rel="icon" href="icon_vector.svg">
     </head>
@@ -119,7 +119,7 @@ if you have any advice or contributions to make, feel free to either contact me 
                 </div>
             </div>
             <button onclick="getOutput()">Generate</button>
-            <button onclick="toggleAnchors('output')">Toggle Accessibility Highlighting</button>
+            <button onclick="focalAnchors.toggleAnchors('output')">Toggle Accessibility Highlighting</button>
             <output id="output"></output>
         </div>
         <footer>
